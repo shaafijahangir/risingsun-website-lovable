@@ -63,12 +63,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Thai Travel Tales
+				// Refined color palette for Rising Sun
 				"thai-gold": "#D4AF37",
-				"thai-blue": "#4392F1",
+				"thai-blue": "#1E78C8", // Bright sky blue
 				"thai-teal": "#33B5AD",
 				"thai-orange": "#FF7F50",
 				"thai-cream": "#F8F4E3",
+				"sunrise-yellow": "#FFD700",
+				"dawn-orange": "#FFA07A",
+				"sky-blue": "#87CEEB",
+				"deep-blue": "#0A4B91",
 			},
 			fontFamily: {
 				heading: ['Playfair Display', 'serif'],
@@ -95,14 +99,30 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-in': {
+					'0%': { transform: 'translateX(-20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'slide-in': 'slide-in 0.5s ease-out forwards'
 			},
 			backgroundImage: {
 				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/placeholder.svg')",
+				'sunrise-gradient': 'linear-gradient(135deg, #FFD700, #FFA07A)',
+				'sky-gradient': 'linear-gradient(135deg, #87CEEB, #1E78C8)',
+			},
+			boxShadow: {
+				'soft': '0 4px 12px rgba(0,0,0,0.05)',
+				'glow': '0 0 15px rgba(212, 175, 55, 0.5)',
 			},
 		}
 	},

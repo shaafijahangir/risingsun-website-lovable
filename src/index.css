@@ -16,10 +16,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
+    /* Updated primary color to Thai gold */
     --primary: 43 77% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 89% 60%;
+    /* Updated secondary color to Thai blue */
+    --secondary: 210 80% 45%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
@@ -45,11 +47,23 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans scroll-smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-bold;
   }
 }
 
@@ -59,4 +73,28 @@
 
 .container-custom {
   @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+/* Custom gradient effects */
+.bg-sunrise {
+  @apply bg-gradient-to-r from-yellow-500 to-thai-gold;
+}
+
+.bg-sky {
+  @apply bg-gradient-to-r from-thai-blue to-blue-600;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Smooth animations */
+.fade-in {
+  @apply opacity-0 animate-[fadeIn_0.5s_ease-out_forwards];
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
