@@ -74,16 +74,16 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone size={18} className="mr-2 mt-1 text-thai-gold" />
-                <span className="text-gray-400">+66 123 456 789</span>
+                <span className="text-gray-400">+66 877 053 366</span>
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="mr-2 mt-1 text-thai-gold" />
-                <span className="text-gray-400">info@thaitraveltales.com</span>
+                <span className="text-gray-400">salimjahangir67@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 text-thai-gold" />
                 <span className="text-gray-400">
-                  123 Sukhumvit Road, Bangkok, Thailand 10110
+                  29 Sukhumvit Soi 3 (Nana Nua), Bangkok 10110, Thailand
                 </span>
               </li>
             </ul>
