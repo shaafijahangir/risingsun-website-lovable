@@ -8,7 +8,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialCard = ({
@@ -24,7 +24,10 @@ const TestimonialCard = ({
 }) => {
   return (
     <Card className="border-none shadow-lg h-full">
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex flex-col items-center text-center">
+        <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+          <Quote className="text-thai-gold" size={24} />
+        </div>
         <div className="flex mb-4">
           {Array(5)
             .fill(0)
@@ -37,12 +40,9 @@ const TestimonialCard = ({
             ))}
         </div>
         <p className="text-gray-700 mb-6 italic">{content}</p>
-        <div className="flex items-center mt-auto">
-          <div className="bg-gray-200 w-10 h-10 rounded-full mr-3" />
-          <div>
-            <p className="font-semibold">{author}</p>
-            <p className="text-sm text-gray-500">{location}</p>
-          </div>
+        <div className="flex flex-col items-center mt-auto">
+          <p className="font-semibold">{author}</p>
+          <p className="text-sm text-gray-500">{location}</p>
         </div>
       </CardContent>
     </Card>
@@ -51,6 +51,7 @@ const TestimonialCard = ({
 
 const TestimonialsSection = () => {
   const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
   
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
@@ -59,7 +60,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       content:
-        "Our family trip to Thailand exceeded all expectations. The personal touches, insider access to less crowded spots, and seamless logistics made it our best vacation ever. Having a local expert arrange everything made such a difference.",
+        "Our family trip to Thailand was absolutely magical! The tour guides were knowledgeable and friendly, and the itinerary was perfectly balanced between cultural experiences and relaxation. We'll definitely be booking with them again!",
       author: "Sarah Johnson",
       location: "United States",
       rating: 5,
@@ -87,23 +88,38 @@ const TestimonialsSection = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!api) return;
+    
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
   return (
     <section id="testimonials" className="section-padding bg-thai-cream">
       <div className="container-custom">
         <div className="text-center mb-12">
+          <div className="inline-block bg-black text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
+            Testimonials
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What Our Travelers Say
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Hear from travelers who have experienced
-            our personalized approach to Thai travel.
+            Hear from travelers who have experienced the magic of Thailand with our expert guidance.
           </p>
         </div>
 
         <Carousel 
-          className="w-full max-w-6xl mx-auto" 
+          className="w-full max-w-4xl mx-auto" 
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
           plugins={[plugin.current]}
@@ -111,7 +127,7 @@ const TestimonialsSection = () => {
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-2">
+              <CarouselItem key={index} className="md:basis-full p-4">
                 <TestimonialCard
                   content={testimonial.content}
                   author={testimonial.author}
@@ -121,9 +137,23 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          
           <div className="hidden md:flex justify-center mt-8 gap-2">
             <CarouselPrevious className="relative static" />
             <CarouselNext className="relative static" />
+          </div>
+          
+          <div className="flex justify-center mt-6 gap-2">
+            {testimonials.map((_, index) => (
+              <button 
+                key={index} 
+                onClick={() => api?.scrollTo(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  current === index ? "bg-thai-gold w-5" : "bg-gray-300"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </Carousel>
       </div>
