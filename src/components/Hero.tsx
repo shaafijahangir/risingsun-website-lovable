@@ -5,12 +5,12 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 // Array of high-quality background images for the carousel
 const backgroundImages = [
-  "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1920&auto=format&fit=crop", // Thailand beach
-  "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1920&auto=format&fit=crop", // Temple
-  "https://images.unsplash.com/photo-1490077476659-095159692ab5?q=80&w=1920&auto=format&fit=crop", // Boat in water
   "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=1920&auto=format&fit=crop", // Island view
+  "https://images.unsplash.com/photo-1490077476659-095159692ab5?q=80&w=1920&auto=format&fit=crop", // Boat in water
   "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=1920&auto=format&fit=crop", // Sunrise over mountains
   "https://images.unsplash.com/photo-1586902197503-e71026292412?q=80&w=1920&auto=format&fit=crop", // Beach sunset
+  "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1920&auto=format&fit=crop", // Thailand beach
+  "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1920&auto=format&fit=crop", // Temple
 ];
 
 const Hero = () => {
