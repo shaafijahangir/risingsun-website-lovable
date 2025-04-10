@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <a href="/" className="text-2xl font-heading font-bold text-thai-gold">
-            Thai Travel Tales
+            Rising Sun
           </a>
         </div>
 

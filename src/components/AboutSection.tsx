@@ -34,7 +34,7 @@ const AboutSection = () => {
               35+ Years of Creating Unforgettable Thai Experiences
             </h2>
             <p className="text-gray-600 mb-6">
-              Thai Travel Tales was founded in 1988 by Somchai Wattana, who had a vision to share 
+              Rising Sun was founded in 1988 by Md Salim Jahangir, who had a vision to share 
               the authentic beauty and culture of Thailand with travelers from around the world. 
               What started as a small local guide service has grown into a full-service travel 
               company with deep local connections throughout Thailand.

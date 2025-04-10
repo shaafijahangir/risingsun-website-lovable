@@ -9,10 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-2xl font-heading font-bold text-thai-gold mb-4">
-              Thai Travel Tales
+              Rising Sun
             </h3>
             <p className="text-gray-400 mb-4">
               Creating authentic Thai adventures and lifelong memories for over 35 years.
+              Founded by Md Salim Jahangir.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">
@@ -93,7 +94,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Thai Travel Tales. All rights reserved.
+              © {new Date().getFullYear()} Rising Sun. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-500 hover:text-thai-gold text-sm transition-colors">Privacy Policy</a>
