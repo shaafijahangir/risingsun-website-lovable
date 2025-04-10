@@ -1,12 +1,15 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialCard = ({
   content,
@@ -20,7 +23,7 @@ const TestimonialCard = ({
   rating: number;
 }) => {
   return (
-    <Card className="border-none shadow-lg">
+    <Card className="border-none shadow-lg h-full">
       <CardContent className="p-6">
         <div className="flex mb-4">
           {Array(5)
@@ -34,7 +37,7 @@ const TestimonialCard = ({
             ))}
         </div>
         <p className="text-gray-700 mb-6 italic">{content}</p>
-        <div className="flex items-center">
+        <div className="flex items-center mt-auto">
           <div className="bg-gray-200 w-10 h-10 rounded-full mr-3" />
           <div>
             <p className="font-semibold">{author}</p>
@@ -47,6 +50,12 @@ const TestimonialCard = ({
 };
 
 const TestimonialsSection = () => {
+  const [api, setApi] = useState<any>(null);
+  
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
+
   const testimonials = [
     {
       content:
@@ -57,7 +66,7 @@ const TestimonialsSection = () => {
     },
     {
       content:
-        "As a solo traveler, I was concerned about navigating Thailand on my own. The team created a perfect balance of guided experiences and free time. Their local connections gave me authentic experiences I could have never found on my own.",
+        "As a solo traveler, I was concerned about navigating Thailand on my own. The Rising Sun team created a perfect balance of guided experiences and free time. Their local connections gave me authentic experiences I could have never found on my own.",
       author: "James Wilson",
       location: "Australia",
       rating: 5,
@@ -71,7 +80,7 @@ const TestimonialsSection = () => {
     },
     {
       content:
-        "As someone who's visited Thailand multiple times, I can say that the hidden gems and local experiences provided by Thai Travel Tales were extraordinary. They showed me a side of Thailand I hadn't seen before.",
+        "As someone who's visited Thailand multiple times, I can say that the hidden gems and local experiences provided by Rising Sun were extraordinary. They showed me a side of Thailand I hadn't seen before.",
       author: "Michael Chen",
       location: "Canada",
       rating: 5,
@@ -79,7 +88,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="section-padding">
+    <section id="testimonials" className="section-padding bg-thai-cream">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -91,10 +100,18 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel 
+          className="w-full max-w-6xl mx-auto" 
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[plugin.current]}
+          setApi={setApi}
+        >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2 p-2">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-2">
                 <TestimonialCard
                   content={testimonial.content}
                   author={testimonial.author}
@@ -104,6 +121,10 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <div className="hidden md:flex justify-center mt-8 gap-2">
+            <CarouselPrevious className="relative static" />
+            <CarouselNext className="relative static" />
+          </div>
         </Carousel>
       </div>
     </section>
