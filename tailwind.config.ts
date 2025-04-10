@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for Thai Travel Tales
+				"thai-gold": "#D4AF37",
+				"thai-blue": "#4392F1",
+				"thai-teal": "#33B5AD",
+				"thai-orange": "#FF7F50",
+				"thai-cream": "#F8F4E3",
+			},
+			fontFamily: {
+				heading: ['Playfair Display', 'serif'],
+				sans: ['Nunito Sans', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -89,7 +100,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			backgroundImage: {
+				'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/placeholder.svg')",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
