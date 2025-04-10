@@ -2,7 +2,8 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/72fc1cbc-f5d5-46d4-adef-ac8ab563aea4
+**site URL**: https://rising-sun.lovable.app/
+**edit URL**: https://lovable.dev/projects/72fc1cbc-f5d5-46d4-adef-ac8ab563aea4
 
 ## How can I edit this code?
 
