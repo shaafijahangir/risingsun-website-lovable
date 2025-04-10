@@ -5,7 +5,6 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 // Array of background images for the carousel
 const backgroundImages = [
-  "/lovable-uploads/d28117b8-d8c1-4be8-b6ab-aa30e14c4b3d.png", // The uploaded image
   "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1920&auto=format&fit=crop", // Thailand beach
   "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1920&auto=format&fit=crop", // Temple
   "https://images.unsplash.com/photo-1490077476659-095159692ab5?q=80&w=1920&auto=format&fit=crop", // Boat in water
