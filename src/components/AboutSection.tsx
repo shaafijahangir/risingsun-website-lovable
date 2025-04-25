@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Award, Calendar, Users, Sun, Check, ChevronRight } from "lucide-react";
@@ -84,19 +85,21 @@ const AboutSection = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#FFCC70]/10 text-[#22668D] px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#8ECDDD]/10 text-[#22668D] px-4 py-2 rounded-full mb-4">
               <Sun size={18} className="text-[#22668D]" />
               <span className="font-medium">Our Story</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading text-[#22668D]">
-              35+ Years of Creating Unforgettable Thai Experiences
-            </h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Rising Sun was founded in 1988 by Md Salim Jahangir, who had a vision to share 
-              the authentic beauty and culture of Thailand with travelers from around the world. 
-              What started as a small local guide service has grown into a full-service travel 
-              company with deep local connections throughout Thailand.
-            </p>
+            <div className="bg-[#8ECDDD]/20 p-6 rounded-lg mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading text-[#22668D]">
+                35+ Years of Creating Unforgettable Thai Experiences
+              </h2>
+              <p className="text-[#22668D] leading-relaxed">
+                Rising Sun was founded in 1988 by Md Salim Jahangir, who had a vision to share 
+                the authentic beauty and culture of Thailand with travelers from around the world. 
+                What started as a small local guide service has grown into a full-service travel 
+                company with deep local connections throughout Thailand.
+              </p>
+            </div>
             <div className="flex items-center mb-6">
               <div className="mr-6">
                 <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
@@ -111,10 +114,10 @@ const AboutSection = () => {
               <div>
                 <h4 className="text-lg font-bold text-[#22668D]">Md Salim Jahangir</h4>
                 <p className="text-[#8ECDDD]">Founder & Managing Director</p>
-                <p className="text-sm text-gray-600 mt-1">"Our mission is to showcase the real Thailand through the eyes of locals."</p>
+                <p className="text-sm text-[#22668D] mt-1">"Our mission is to showcase the real Thailand through the eyes of locals."</p>
               </div>
             </div>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-[#22668D] leading-relaxed">
               Unlike large international agencies, we offer a personal touch with the insider 
               knowledge that only comes from decades of local experience. Every itinerary is 
               crafted with care, attention to detail, and a deep understanding of what makes 
