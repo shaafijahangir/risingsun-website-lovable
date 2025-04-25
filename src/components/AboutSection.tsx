@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Award, Calendar, Users, Sun, Check, ChevronRight } from "lucide-react";
@@ -80,13 +79,6 @@ const AboutSection = () => {
     },
   ];
   
-  const partners = [
-    { name: "Tourism Authority of Thailand" },
-    { name: "Thai Hotels Association" },
-    { name: "Association of Thai Travel Agents" },
-    { name: "Pacific Asia Travel Association" },
-  ];
-  
   return (
     <section id="about" className="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container-custom">
@@ -150,18 +142,6 @@ const AboutSection = () => {
                 title={item.title}
                 description={item.description}
               />
-            ))}
-          </div>
-        </div>
-        
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold">Our Trusted Partners</h3>
-            <p className="text-gray-600 mt-2">Proudly affiliated with the top tourism organizations</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {partners.map((partner, index) => (
-              <PartnerLogo key={index} name={partner.name} />
             ))}
           </div>
         </div>
