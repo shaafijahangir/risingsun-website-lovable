@@ -79,6 +79,9 @@ const AboutSection = () => {
     },
   ];
   
+  // Use the imported utility function for optimizing image URLs
+  const founderImageUrl = getOptimizedImageUrl('src/assets/images/salim_pic.jpg');
+  
   return (
     <section id="about" className="section-padding bg-gradient-to-br from-[#FFFADD] to-[#8ECDDD]/10">
       <div className="container-custom">
@@ -101,7 +104,7 @@ const AboutSection = () => {
               <div className="mr-6">
                 <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
                   <img 
-                    src="public/lovable-uploads/salim_pic.jpg"
+                    src={getOptimizedImageUrl('founder')}
                     alt="Md Salim Jahangir, Managing Director" 
                     className="w-full h-full object-cover"
                     loading="lazy"
