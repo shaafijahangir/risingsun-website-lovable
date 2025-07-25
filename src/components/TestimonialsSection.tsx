@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 // Testimonial data
@@ -57,9 +56,6 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  const autoplayRef = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  );
   
   // Responsive breakpoints
   const isDesktop = useMediaQuery("(min-width: 1024px)");
@@ -103,7 +99,6 @@ const TestimonialsSection = () => {
               align: "start",
               loop: true,
             }}
-            plugins={[autoplayRef.current]}
             className="w-full"
             role="region"
             aria-roledescription="testimonials carousel"
