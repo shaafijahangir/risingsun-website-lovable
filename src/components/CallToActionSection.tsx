@@ -14,14 +14,14 @@ const CallToActionSection = () => {
               Let's Plan Your Perfect Thai Adventure Together
             </h2>
             <p className="text-white/90 mb-6 text-lg">
-              Schedule a free 10-minute call to discuss your travel dreams. We'll
+              Schedule a free 15-minute call to discuss your travel dreams. We'll
               listen to your preferences and start crafting your personalized
               Thai experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <div className="flex items-center text-white/90">
                 <Clock className="mr-2" size={20} />
-                <span>10 minute call</span>
+                <span>15 minute call</span>
               </div>
               <div className="flex items-center text-white/90">
                 <Calendar className="mr-2" size={20} />
