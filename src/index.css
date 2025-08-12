@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,8 +16,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Updated primary color to Thai gold */
-    --primary: 43 77% 52%;
+    /* Primary brand color (E0B63F) */
+    --primary: 44 72% 56%;
     --primary-foreground: 0 0% 100%;
 
     /* Updated secondary color to Thai blue */
@@ -35,7 +35,19 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 43 77% 52%;
+    --ring: 44 72% 56%;
+
+    /* Brand tokens */
+    --brand-primary: 44 72% 56%;
+    --brand-navy: 206 71% 15%;
+    --brand-offwhite: 35 100% 97%;
+
+    /* Gray scale tokens */
+    --brand-gray-100: 0 0% 96%;
+    --brand-gray-300: 0 0% 80%;
+    --brand-gray-500: 0 0% 60%;
+    --brand-gray-700: 0 0% 40%;
+    --brand-gray-900: 0 0% 10%;
 
     --radius: 0.5rem;
   }
@@ -55,15 +67,15 @@
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-4xl font-bold;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl font-bold;
+    @apply text-3xl font-bold;
   }
   
   h3 {
-    @apply text-2xl md:text-3xl font-bold;
+    @apply text-2xl font-semibold;
   }
 }
 

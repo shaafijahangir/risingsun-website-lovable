@@ -75,8 +75,8 @@ export default {
 				"deep-blue": "#0A4B91",
 			},
 			fontFamily: {
-				heading: ['Playfair Display', 'serif'],
-				sans: ['Nunito Sans', 'sans-serif'],
+				heading: ['Inter', 'sans-serif'],
+				sans: ['Inter', 'Nunito Sans', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
