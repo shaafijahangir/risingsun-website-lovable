@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Calendar as DatePickerCalendar } from "@/components/ui/calendar";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
 import { 
   Stethoscope, 
   Heart, 
@@ -141,6 +148,25 @@ const MedicalTourismSection = () => {
     }
   ];
 
+  // Simple in-section request form state and handlers
+  const { register, handleSubmit, reset } = useForm();
+  const { toast } = useToast();
+  const [appointmentDate, setAppointmentDate] = useState<Date | undefined>();
+
+  const onSubmit = (data: any) => {
+    if (!appointmentDate) {
+      toast({ title: "Select appointment date", description: "Please choose your preferred appointment date.", });
+      return;
+    }
+    // In a real app, send to backend or Supabase storage.
+    toast({
+      title: "Teleconsultation request submitted",
+      description: "We will contact you within 24 hours to confirm your appointment.",
+    });
+    reset();
+    setAppointmentDate(undefined);
+  };
+
   return (
     <section 
       id="medical-tourism" 
@@ -214,45 +240,73 @@ const MedicalTourismSection = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="bg-[#FFFADD] rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-[#22668D]">
-            Ready to Explore Medical Treatment in Thailand?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Schedule a consultation to discuss your medical needs and learn about 
-            treatment options at Thailand's top hospitals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-[#22668D] hover:bg-[#22668D]/90 text-white"
-            >
-              <a 
-                href="/medical-consultation" 
-                className="flex items-center"
-              >
-                <Phone className="mr-2" size={18} />
-                Book Medical Consultation
-              </a>
-            </Button>
-            <Button 
-              asChild
-              variant="outline" 
-              size="lg"
-              className="border-[#22668D] text-[#22668D] hover:bg-[#22668D] hover:text-white"
-            >
-              <a 
-                href="https://calendly.com/salimjahangir67/15min" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center"
-              >
-                <Video className="mr-2" size={18} />
-                Quick 15-min Call
-              </a>
-            </Button>
+        {/* Teleconsultation Request (replaces CTA) */}
+        <div className="bg-[#FFFADD] rounded-2xl p-8">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-2 text-[#22668D] text-center">
+              Request a Teleconsultation
+            </h3>
+            <p className="text-muted-foreground mb-8 text-center">
+              Share your details to book a virtual appointment with top Thai specialists.
+            </p>
+            <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Passport Copy */}
+              <div className="space-y-2">
+                <Label htmlFor="passport">Passport copy</Label>
+                <Input
+                  id="passport"
+                  type="file"
+                  accept="image/*,application/pdf"
+                  {...register("passport", { required: true })}
+                  aria-required
+                />
+                <p className="text-xs text-muted-foreground">Accepted: PDF, JPG, PNG</p>
+              </div>
+
+              {/* Preferred Date */}
+              <div className="space-y-2">
+                <Label>Preferred appointment date</Label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="justify-start font-normal"
+                    >
+                      {appointmentDate ? appointmentDate.toDateString() : "Pick a date"}
+                      <Clock className="ml-auto" size={18} />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <DatePickerCalendar
+                      mode="single"
+                      selected={appointmentDate}
+                      onSelect={setAppointmentDate}
+                      initialFocus
+                      className="p-3 pointer-events-auto"
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+
+              {/* Issue */}
+              <div className="space-y-2 md:col-span-2">
+                <Label htmlFor="issue">Medical problem/issue to be discussed</Label>
+                <Textarea
+                  id="issue"
+                  rows={4}
+                  placeholder="Briefly describe your medical concern..."
+                  {...register("issue", { required: true, minLength: 10 })}
+                  aria-required
+                />
+              </div>
+
+              <div className="md:col-span-2 flex flex-col sm:flex-row gap-3 justify-end">
+                <Button type="submit" size="lg">
+                  Request Teleconsultation
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
