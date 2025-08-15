@@ -124,9 +124,6 @@ export default {
 				'soft': '0 4px 12px rgba(0,0,0,0.05)',
 				'glow': '0 0 15px rgba(212, 175, 55, 0.5)',
 			},
-			spacing: {
-				'safe': 'env(safe-area-inset-bottom)',
-			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
