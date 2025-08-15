@@ -1,5 +1,6 @@
 
 import React from "react";
+import { LocalizedMeta } from "@/components/LocalizedMeta";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/ServicesSection";
@@ -12,17 +13,20 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <ServicesSection />
-      <MedicalTourismSection />
-      <PackagesSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <CallToActionSection />
-      <Footer />
-    </div>
+    <>
+      <LocalizedMeta />
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <ServicesSection />
+        <MedicalTourismSection />
+        <PackagesSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <CallToActionSection />
+        <Footer />
+      </div>
+    </>
   );
 };
 
