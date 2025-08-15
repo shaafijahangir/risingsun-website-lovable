@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "packages": "Packages",
+    "tripBuilder": "Trip Builder",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "blog": "Blog/Guides",
+    "medicalTravel": "Medical Travel",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Plan Your Thailand Trip With Local Experts",
+    "subtitle": "35+ years · 10k+ travelers · Custom itineraries · Medical travel available",
+    "primaryCta": "Book a 15-minute call",
+    "secondaryCta": "See sample itineraries",
+    "trustChip": "Trusted since 1988"
+  },
+  "benefits": {
+    "title": "Why Choose Rising Sun",
+    "localAccess": "Local insider access",
+    "planning": "Seamless end-to-end planning",
+    "pricing": "Fair, transparent pricing"
+  },
+  "packages": {
+    "title": "Top Travel Packages",
+    "viewDetails": "View details",
+    "bookCall": "Book call",
+    "browseAll": "Browse all packages"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1": "Plan call",
+    "step2": "Tailored itinerary & pricing",
+    "step3": "Travel & support"
+  },
+  "testimonials": {
+    "title": "What Our Travelers Say",
+    "satisfaction": "10k+ travelers, 100% satisfaction"
+  },
+  "medicalTravel": {
+    "title": "Medical Travel",
+    "description": "Virtual consults with top Thai hospitals",
+    "learnMore": "Learn more"
+  },
+  "about": {
+    "title": "About Rising Sun",
+    "ourStory": "Our story"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "finalCta": {
+    "title": "Ready to Start Your Thai Adventure?",
+    "bookCall": "Book a 15-minute call",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Your trusted partner for unforgettable Thailand experiences since 1988.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved."
+  },
+  "mobileActions": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "book": "Book"
+  },
+  "language": {
+    "english": "English",
+    "bangla": "বাংলা",
+    "changeLanguage": "Change language",
+    "languageBanner": "This page is available in your language",
+    "switchTo": "Switch to",
+    "dismiss": "Dismiss"
+  },
+  "meta": {
+    "title": "Rising Sun Travel - Expert Thailand Trip Planning",
+    "description": "Plan your perfect Thailand trip with local experts. 35+ years experience, custom itineraries, medical travel. Trusted since 1988."
+  }
+}
