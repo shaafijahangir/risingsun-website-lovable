@@ -1,0 +1,26 @@
+{
+  "common": {
+    "home": "হোম",
+    "destinations": "গন্তব্যসমূহ",
+    "packages": "প্যাকেজ",
+    "tripBuilder": "ট্রিপ বিল্ডার",
+    "about": "আমাদের সম্পর্কে",
+    "testimonials": "প্রশংসাপত্র",
+    "blogGuides": "ব্লগ/গাইড",
+    "medicalTravel": "চিকিৎসা ভ্রমণ",
+    "contact": "যোগাযোগ",
+    "bookCall": "১৫ মিনিটের কল বুক করুন",
+    "call": "কল",
+    "whatsapp": "হোয়াটসঅ্যাপ",
+    "book": "বুক"
+  },
+  "hero": {
+    "title": "রাইজিং সানের সাথে থাইল্যান্ড আবিষ্কার করুন",
+    "subtitle": "অবিস্মরণীয় থাই অভিজ্ঞতার আপনার প্রবেশদ্বার"
+  },
+  "language": {
+    "switchTo": "পরিবর্তন করুন",
+    "english": "English",
+    "bangla": "বাংলা"
+  }
+}

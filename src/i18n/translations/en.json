@@ -1,0 +1,26 @@
+{
+  "common": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "packages": "Packages",
+    "tripBuilder": "Trip Builder",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "blogGuides": "Blog/Guides",
+    "medicalTravel": "Medical Travel",
+    "contact": "Contact",
+    "bookCall": "Book a 15-minute call",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "book": "Book"
+  },
+  "hero": {
+    "title": "Discover Thailand with Rising Sun",
+    "subtitle": "Your gateway to unforgettable Thai experiences"
+  },
+  "language": {
+    "switchTo": "Switch to",
+    "english": "English",
+    "bangla": "বাংলা"
+  }
+}

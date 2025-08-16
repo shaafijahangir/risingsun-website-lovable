@@ -1,25 +1,28 @@
 import { NavLink, Link } from "react-router-dom";
 import CtaButton from "@/components/CtaButton";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { useI18n } from "@/i18n/context";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useI18n();
   
   const navCls = ({ isActive }: { isActive: boolean }) =>
     isActive ? "text-primary font-medium" : "text-foreground/80 hover:text-foreground";
 
   const navItems = [
-    { name: "Destinations", href: "#destinations" },
-    { name: "Packages", href: "#packages" },
-    { name: "Trip Builder", href: "#trip-builder" },
-    { name: "About", href: "#about" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Blog/Guides", href: "#blog" },
-    { name: "Medical Travel", href: "/medical-consultation" },
-    { name: "Contact", href: "#contact" },
+    { name: t("common.destinations"), href: "#destinations" },
+    { name: t("common.packages"), href: "#packages" },
+    { name: t("common.tripBuilder"), href: "#trip-builder" },
+    { name: t("common.about"), href: "#about" },
+    { name: t("common.testimonials"), href: "#testimonials" },
+    { name: t("common.blogGuides"), href: "#blog" },
+    { name: t("common.medicalTravel"), href: "/medical-consultation" },
+    { name: t("common.contact"), href: "#contact" },
   ];
 
   return (
@@ -42,7 +45,7 @@ const Header = () => {
           {/* Nav center */}
           <nav className="hidden lg:flex items-center justify-center gap-6">
             <NavLink to="/" end className={navCls}>
-              Home
+              {t("common.home")}
             </NavLink>
             {navItems.map((item) => (
               item.href.startsWith("/") ? (
@@ -63,8 +66,9 @@ const Header = () => {
 
           {/* CTA right */}
           <div className="flex items-center justify-end gap-2">
+            <LanguageSwitcher />
             <CtaButton asChild className="hidden sm:flex">
-              <Link to="/medical-consultation">Book a 15-minute call</Link>
+              <Link to="/medical-consultation">{t("common.bookCall")}</Link>
             </CtaButton>
             
             {/* Mobile hamburger */}
@@ -83,7 +87,7 @@ const Header = () => {
                     className={navCls}
                     onClick={() => setIsOpen(false)}
                   >
-                    Home
+                    {t("common.home")}
                   </NavLink>
                   {navItems.map((item) => (
                     item.href.startsWith("/") ? (
@@ -106,11 +110,14 @@ const Header = () => {
                       </a>
                     )
                   ))}
-                  <CtaButton asChild className="mt-4">
-                    <Link to="/medical-consultation" onClick={() => setIsOpen(false)}>
-                      Book a 15-minute call
-                    </Link>
-                  </CtaButton>
+                  <div className="mt-4 space-y-3">
+                    <LanguageSwitcher />
+                    <CtaButton asChild>
+                      <Link to="/medical-consultation" onClick={() => setIsOpen(false)}>
+                        {t("common.bookCall")}
+                      </Link>
+                    </CtaButton>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
