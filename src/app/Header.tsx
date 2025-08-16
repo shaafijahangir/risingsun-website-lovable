@@ -4,25 +4,22 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { useI18n } from "@/i18n/context";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t, locale } = useI18n();
   
   const navCls = ({ isActive }: { isActive: boolean }) =>
     isActive ? "text-primary font-medium" : "text-foreground/80 hover:text-foreground";
 
   const navItems = [
-    { nameKey: "nav.destinations", href: "#destinations" },
-    { nameKey: "nav.packages", href: "#packages" },
-    { nameKey: "nav.tripBuilder", href: "#trip-builder" },
-    { nameKey: "nav.about", href: "#about" },
-    { nameKey: "nav.testimonials", href: "#testimonials" },
-    { nameKey: "nav.blog", href: "#blog" },
-    { nameKey: "nav.medicalTravel", href: `/${locale}/medical-consultation` },
-    { nameKey: "nav.contact", href: "#contact" },
+    { name: "Destinations", href: "#destinations" },
+    { name: "Packages", href: "#packages" },
+    { name: "Trip Builder", href: "#trip-builder" },
+    { name: "About", href: "#about" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Blog/Guides", href: "#blog" },
+    { name: "Medical Travel", href: "/medical-consultation" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -44,21 +41,21 @@ const Header = () => {
 
           {/* Nav center */}
           <nav className="hidden lg:flex items-center justify-center gap-6">
-            <NavLink to={`/${locale}`} end className={navCls}>
-              {t('nav.home')}
+            <NavLink to="/" end className={navCls}>
+              Home
             </NavLink>
             {navItems.map((item) => (
               item.href.startsWith("/") ? (
-                <NavLink key={item.nameKey} to={item.href} className={navCls}>
-                  {t(item.nameKey)}
+                <NavLink key={item.name} to={item.href} className={navCls}>
+                  {item.name}
                 </NavLink>
               ) : (
                 <a
-                  key={item.nameKey}
+                  key={item.name}
                   href={item.href}
                   className="text-foreground/80 hover:text-foreground transition-colors"
                 >
-                  {t(item.nameKey)}
+                  {item.name}
                 </a>
               )
             ))}
@@ -67,10 +64,8 @@ const Header = () => {
           {/* CTA right */}
           <div className="flex items-center justify-end gap-2">
             <CtaButton asChild className="hidden sm:flex">
-              <Link to={`/${locale}/medical-consultation`}>{t('hero.primaryCta')}</Link>
+              <Link to="/medical-consultation">Book a 15-minute call</Link>
             </CtaButton>
-            
-            <LanguageSwitcher variant="desktop" />
             
             {/* Mobile hamburger */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -83,40 +78,37 @@ const Header = () => {
               <SheetContent side="right" className="w-80">
                 <div className="flex flex-col gap-6 mt-6">
                   <NavLink
-                    to={`/${locale}`}
+                    to="/"
                     end
                     className={navCls}
                     onClick={() => setIsOpen(false)}
                   >
-                    {t('nav.home')}
+                    Home
                   </NavLink>
                   {navItems.map((item) => (
                     item.href.startsWith("/") ? (
                       <NavLink
-                        key={item.nameKey}
+                        key={item.name}
                         to={item.href}
                         className={navCls}
                         onClick={() => setIsOpen(false)}
                       >
-                        {t(item.nameKey)}
+                        {item.name}
                       </NavLink>
                     ) : (
                       <a
-                        key={item.nameKey}
+                        key={item.name}
                         href={item.href}
                         className="text-foreground/80 hover:text-foreground transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
-                        {t(item.nameKey)}
+                        {item.name}
                       </a>
                     )
                   ))}
-                  <div className="border-t pt-6 mt-6">
-                    <LanguageSwitcher variant="mobile" />
-                  </div>
                   <CtaButton asChild className="mt-4">
-                    <Link to={`/${locale}/medical-consultation`} onClick={() => setIsOpen(false)}>
-                      {t('hero.primaryCta')}
+                    <Link to="/medical-consultation" onClick={() => setIsOpen(false)}>
+                      Book a 15-minute call
                     </Link>
                   </CtaButton>
                 </div>
