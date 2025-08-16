@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Plane, Hotel, Car, Map, Compass, Users } from "lucide-react";
+import { useI18n } from "@/i18n/context";
 
 const ServiceCard = ({ 
   icon: Icon, 
@@ -23,42 +24,38 @@ const ServiceCard = ({
 };
 
 const ServicesSection = () => {
+  const { t } = useI18n();
+  
   const services = [
     {
       icon: Plane,
-      title: "Flight Bookings",
-      description:
-        "International and domestic flights at competitive rates with trusted airlines.",
+      title: t('services.flight.title'),
+      description: t('services.flight.description'),
     },
     {
       icon: Hotel,
-      title: "Accommodations",
-      description:
-        "From luxury resorts to boutique hotels and authentic homestays across Thailand.",
+      title: t('services.accommodation.title'),
+      description: t('services.accommodation.description'),
     },
     {
       icon: Car,
-      title: "Transportation",
-      description:
-        "Private transfers, car rentals, and guided transportation throughout your journey.",
+      title: t('services.transportation.title'),
+      description: t('services.transportation.description'),
     },
     {
       icon: Map,
-      title: "Local Attractions",
-      description:
-        "Skip-the-line tickets and exclusive access to Thailand's best attractions.",
+      title: t('services.attractions.title'),
+      description: t('services.attractions.description'),
     },
     {
       icon: Compass,
-      title: "Custom Itineraries",
-      description:
-        "Personalized travel plans tailored to your preferences, budget, and schedule.",
+      title: t('services.itineraries.title'),
+      description: t('services.itineraries.description'),
     },
     {
       icon: Users,
-      title: "Group Tours",
-      description:
-        "Join like-minded travelers on expertly guided small group experiences.",
+      title: t('services.groupTours.title'),
+      description: t('services.groupTours.description'),
     },
   ];
 
@@ -67,11 +64,10 @@ const ServicesSection = () => {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Full-Service Travel Experience
+            {t('services.title')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            From the moment you land until your departure, we handle every aspect of your journey 
-            with attention to detail and personalized service.
+            {t('services.subtitle')}
           </p>
         </div>
 

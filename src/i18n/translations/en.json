@@ -12,11 +12,78 @@
     "bookCall": "Book a 15-minute call",
     "call": "Call",
     "whatsapp": "WhatsApp",
-    "book": "Book"
+    "book": "Book",
+    "explorePackages": "Explore Packages",
+    "bookFreeCall": "Book a Free Call"
   },
   "hero": {
-    "title": "Discover Thailand with Rising Sun",
-    "subtitle": "Your gateway to unforgettable Thai experiences"
+    "badge": "Trusted for over 35 years",
+    "title": "Experience Thailand Through The Eyes of a Local",
+    "subtitle": "Personalized travel experiences, expert local knowledge, and unforgettable memories. Let us plan your perfect Thai adventure."
+  },
+  "services": {
+    "title": "Full-Service Travel Experience",
+    "subtitle": "From the moment you land until your departure, we handle every aspect of your journey with attention to detail and personalized service.",
+    "flight": {
+      "title": "Flight Bookings",
+      "description": "International and domestic flights at competitive rates with trusted airlines."
+    },
+    "accommodation": {
+      "title": "Accommodations",
+      "description": "From luxury resorts to boutique hotels and authentic homestays across Thailand."
+    },
+    "transportation": {
+      "title": "Transportation",
+      "description": "Private transfers, car rentals, and guided transportation throughout your journey."
+    },
+    "attractions": {
+      "title": "Local Attractions",
+      "description": "Skip-the-line tickets and exclusive access to Thailand's best attractions."
+    },
+    "itineraries": {
+      "title": "Custom Itineraries",
+      "description": "Personalized travel plans tailored to your preferences, budget, and schedule."
+    },
+    "groupTours": {
+      "title": "Group Tours",
+      "description": "Join like-minded travelers on expertly guided small group experiences."
+    }
+  },
+  "about": {
+    "badge": "Our Story",
+    "title": "35+ Years of Creating Unforgettable Thai Experiences",
+    "description1": "Rising Sun was founded in 1988 by Md Salim Jahangir, who had a vision to share the authentic beauty and culture of Thailand with travelers from around the world. What started as a small local guide service has grown into a full-service travel company with deep local connections throughout Thailand.",
+    "founderName": "Md Salim Jahangir",
+    "founderTitle": "Founder & Managing Director",
+    "founderQuote": "Our mission is to showcase the real Thailand through the eyes of locals.",
+    "description2": "Unlike large international agencies, we offer a personal touch with the insider knowledge that only comes from decades of local experience. Every itinerary is crafted with care, attention to detail, and a deep understanding of what makes Thailand special.",
+    "stats": {
+      "experience": "Years Experience",
+      "travelers": "Happy Travelers",
+      "satisfaction": "Satisfaction",
+      "countries": "Countries Served"
+    },
+    "journeyTitle": "Our Journey",
+    "journeySubtitle": "Milestones from our 35+ years in Thai tourism",
+    "timeline": {
+      "1988": {
+        "title": "Humble Beginnings",
+        "description": "Rising Sun was founded as a small local guide service in Bangkok."
+      },
+      "1995": {
+        "title": "Expansion to Northern Thailand",
+        "description": "Opened our first office in Chiang Mai to provide services in Northern Thailand."
+      },
+      "2005": {
+        "title": "International Recognition",
+        "description": "Awarded 'Best Cultural Tour Operator' by Tourism Authority of Thailand."
+      },
+      "2018": {
+        "title": "Digital Transformation",
+        "description": "Launched online booking platform to serve international clients better."
+      }
+    },
+    "scheduleCall": "Schedule a Free 10-Minute Call"
   },
   "language": {
     "switchTo": "Switch to",

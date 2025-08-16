@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
+import { useI18n } from "@/i18n/context";
 
 // Array of high-quality background images for the carousel
 const backgroundImages = [
@@ -15,6 +16,7 @@ const backgroundImages = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { t } = useI18n();
 
   // Auto rotate background images every 5 seconds
   useEffect(() => {
@@ -52,25 +54,25 @@ const Hero = () => {
           <div 
             className="inline-block bg-gradient-to-r from-yellow-500 to-thai-gold text-white px-4 py-2 rounded-full mb-4 shadow-md"
           >
-            Trusted for over 35 years
+            {t('hero.badge')}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight drop-shadow-md">
-            Experience Thailand Through The Eyes of a Local
+            {t('hero.title')}
           </h1>
           <p className="text-xl text-white/95 mb-8 max-w-2xl mx-auto md:mx-0 drop-shadow-sm">
-            Personalized travel experiences, expert local knowledge, and unforgettable memories. Let us plan your perfect Thai adventure.
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild size="lg" className="bg-thai-gold hover:bg-thai-gold/90 text-white shadow-lg">
               <a href="#packages">
-                Explore Packages
+                {t('common.explorePackages')}
                 <ArrowRight className="ml-2" size={16} />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-white hover:bg-white/90 text-thai-blue border-thai-blue shadow-md">
               <a href="#book-call">
                 <Calendar className="mr-2" size={16} />
-                Book a Free Call
+                {t('common.bookFreeCall')}
               </a>
             </Button>
           </div>
