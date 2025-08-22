@@ -10,20 +10,18 @@ import { useI18n, Locale } from '@/i18n/context';
 import { ChevronDown } from 'lucide-react';
 
 const LanguageSwitcher = () => {
-  const { locale, setLocale, t } = useI18n();
+  const { locale, setLocale } = useI18n();
 
   const languages = [
     {
       code: 'en' as Locale,
       name: 'English',
-      flag: '🇺🇸',
-      nativeName: 'English'
+      flag: '🇺🇸'
     },
     {
       code: 'bn' as Locale,
       name: 'বাংলা',
-      flag: '🇧🇩',
-      nativeName: 'বাংলা'
+      flag: '🇧🇩'
     }
   ];
 
@@ -33,40 +31,33 @@ const LanguageSwitcher = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button 
-          variant="ghost" 
+          variant="outline" 
           size="sm"
-          className="flex items-center gap-2 hover:bg-accent transition-all duration-200"
-          aria-label={t('language.switchTo')}
+          className="flex items-center gap-2 h-9 px-3"
+          aria-label="Change language"
         >
-          <span className="text-lg transition-transform duration-300 hover:scale-110">
+          <span className="text-base">
             {currentLanguage?.flag}
           </span>
-          <span className="hidden sm:inline-block font-medium">
-            {currentLanguage?.nativeName}
+          <span className="font-medium text-sm">
+            {currentLanguage?.name}
           </span>
-          <ChevronDown className="h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="min-w-[160px] bg-background/95 backdrop-blur-sm border shadow-lg"
-        sideOffset={8}
+        className="min-w-[140px] z-50"
+        sideOffset={4}
       >
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => setLocale(language.code)}
-            className={`flex items-center gap-3 p-3 cursor-pointer transition-all duration-200 hover:bg-accent focus:bg-accent ${
-              locale === language.code ? 'bg-accent/50' : ''
-            }`}
+            className="flex items-center gap-2 cursor-pointer"
           >
-            <span className="text-lg transition-transform duration-200 hover:scale-110">
-              {language.flag}
-            </span>
-            <span className="font-medium">{language.nativeName}</span>
-            {locale === language.code && (
-              <div className="ml-auto w-2 h-2 bg-primary rounded-full animate-pulse" />
-            )}
+            <span className="text-base">{language.flag}</span>
+            <span className="font-medium">{language.name}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
