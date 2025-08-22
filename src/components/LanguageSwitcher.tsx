@@ -33,16 +33,16 @@ const LanguageSwitcher = () => {
         <Button 
           variant="outline" 
           size="sm"
-          className="flex items-center gap-2 h-9 px-3"
+          className="flex items-center gap-1.5 h-9 px-2 sm:px-3 min-w-[44px]"
           aria-label="Change language"
         >
           <span className="text-base">
             {currentLanguage?.flag}
           </span>
-          <span className="font-medium text-sm">
+          <span className="font-medium text-sm hidden sm:inline">
             {currentLanguage?.name}
           </span>
-          <ChevronDown className="h-4 w-4" />
+          <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 

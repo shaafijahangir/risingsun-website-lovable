@@ -28,9 +28,9 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="h-16 grid grid-cols-3 items-center gap-4">
-          {/* Logo left */}
-          <div className="flex items-center">
+        <div className="h-16 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center flex-shrink-0">
             <Link to="/" className="flex items-center gap-2">
               <img
                 src="/risingsun-logo.png"
@@ -42,12 +42,12 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Nav center */}
-          <nav className="hidden lg:flex items-center justify-center gap-6">
+          {/* Center Navigation - Hide some items on medium screens */}
+          <nav className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 flex-1 mx-8">
             <NavLink to="/" end className={navCls}>
               {t("common.home")}
             </NavLink>
-            {navItems.map((item) => (
+            {navItems.slice(0, 4).map((item) => (
               item.href.startsWith("/") ? (
                 <NavLink key={item.name} to={item.href} className={navCls}>
                   {item.name}
@@ -56,25 +56,43 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors"
+                  className="text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
                 >
                   {item.name}
                 </a>
               )
             ))}
+            {/* Show remaining items only on XL screens */}
+            <div className="hidden xl:flex items-center gap-4">
+              {navItems.slice(4).map((item) => (
+                item.href.startsWith("/") ? (
+                  <NavLink key={item.name} to={item.href} className={navCls}>
+                    {item.name}
+                  </NavLink>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
+                  >
+                    {item.name}
+                  </a>
+                )
+              ))}
+            </div>
           </nav>
 
-          {/* CTA right */}
-          <div className="flex items-center justify-end gap-2">
+          {/* Right Actions */}
+          <div className="flex items-center gap-2 flex-shrink-0">
             <LanguageSwitcher />
-            <CtaButton asChild className="hidden sm:flex">
+            <CtaButton asChild className="hidden sm:flex ml-1">
               <Link to="/medical-consultation">{t("common.bookCall")}</Link>
             </CtaButton>
             
             {/* Mobile hamburger */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden ml-1">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
