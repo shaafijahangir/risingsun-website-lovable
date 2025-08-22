@@ -1,6 +1,6 @@
 
 import React from "react";
-import Navbar from "@/components/Navbar";
+import Header from "@/app/Header";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/ServicesSection";
 import MedicalTourismSection from "@/components/MedicalTourismSection";
@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <Header />
       <Hero />
       <ServicesSection />
       <MedicalTourismSection />
