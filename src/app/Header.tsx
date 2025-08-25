@@ -4,12 +4,22 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useI18n } from "@/i18n/context";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useI18n();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   const navCls = ({ isActive }: { isActive: boolean }) =>
     isActive ? "text-primary font-medium" : "text-foreground/80 hover:text-foreground";
@@ -26,7 +36,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-background/95 backdrop-blur-md border-b shadow-sm' 
+        : 'bg-transparent border-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="h-16 flex items-center justify-between">
           {/* Logo */}
