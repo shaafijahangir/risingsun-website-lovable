@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "@/app/Header";
 import Footer from "@/components/Footer";
-import MedicalConsultationForm from "@/components/MedicalConsultationForm";
-import { ArrowLeft, Shield, Clock, Users } from "lucide-react";
+import ContactButtons from "@/components/ContactButtons";
+import { ArrowLeft, Shield, Clock, Users, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -93,10 +93,49 @@ const MedicalConsultation = () => {
         </div>
       </section>
 
-      {/* Form Section */}
+      {/* Contact Section */}
       <section className="pb-16">
-        <div className="container-custom">
-          <MedicalConsultationForm />
+        <div className="container-custom max-w-4xl mx-auto">
+          <Card className="border-0 shadow-lg">
+            <CardContent className="p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-secondary">
+                  Contact Our Medical Tourism Specialist
+                </h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Speak directly with Salim Jahangir for personalized medical consultation services. 
+                  All communications are secure, confidential, and HIPAA compliant.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-lg p-6 mb-8">
+                <div className="text-center space-y-4">
+                  <h4 className="font-semibold text-secondary text-lg">Salim Jahangir</h4>
+                  <p className="text-sm text-muted-foreground">Medical Tourism Specialist</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Mail size={16} className="text-secondary" />
+                      <span>salimjahangir67@gmail.com</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Phone size={16} className="text-secondary" />
+                      <span>+66 812052022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <ContactButtons size="lg" className="justify-center" />
+              
+              <div className="mt-6 p-4 bg-muted/30 rounded-lg">
+                <p className="text-xs text-muted-foreground text-center">
+                  🔒 Your privacy is our priority. All medical information is shared through secure, 
+                  encrypted channels only. No sensitive data is stored on our website.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
