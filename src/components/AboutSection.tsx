@@ -51,7 +51,7 @@ const PartnerLogo = ({
   name: string;
   logoUrl?: string;
 }) => (
-  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+  <div className="flex items-center justify-center p-4 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow">
     <img src={logoUrl} alt={`${name} logo`} className="h-12 max-w-[120px] object-contain" loading="lazy" />
   </div>
 );
@@ -147,7 +147,7 @@ const AboutSection = () => {
         </div>
         
         <div className="text-center">
-          <Button asChild size="lg" className="bg-[#22668D] hover:bg-[#22668D]/90 text-white">
+          <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
             <a href="https://calendly.com/salimjahangir67/15min" target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Calendar className="mr-2" size={18} />
               {t('about.scheduleCall')}

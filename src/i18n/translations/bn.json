@@ -1,6 +1,7 @@
 {
   "common": {
     "home": "হোম",
+    "services": "সেবাসমূহ",
     "destinations": "গন্তব্যসমূহ",
     "packages": "প্যাকেজ",
     "tripBuilder": "ট্রিপ বিল্ডার",
@@ -8,6 +9,7 @@
     "testimonials": "প্রশংসাপত্র",
     "blogGuides": "ব্লগ/গাইড",
     "medicalTravel": "চিকিৎসা ভ্রমণ",
+    "medicalConsultation": "চিকিৎসা পরামর্শ",
     "contact": "যোগাযোগ",
     "bookCall": "১৫ মিনিটের কল বুক করুন",
     "call": "কল",

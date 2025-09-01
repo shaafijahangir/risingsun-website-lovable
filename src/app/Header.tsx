@@ -28,14 +28,11 @@ const Header = () => {
     isActive ? "text-primary font-medium" : "text-foreground/80 hover:text-foreground";
 
   const navItems = [
-    { name: t("common.destinations"), href: "#destinations" },
+    { name: t("common.services"), href: "#services" },
+    { name: t("common.medicalTravel"), href: "#medical-tourism" },
     { name: t("common.packages"), href: "#packages" },
-    { name: t("common.tripBuilder"), href: "#trip-builder" },
     { name: t("common.about"), href: "#about" },
     { name: t("common.testimonials"), href: "#testimonials" },
-    { name: t("common.blogGuides"), href: "#blog" },
-    { name: t("common.medicalTravel"), href: "/medical-consultation" },
-    { name: t("common.contact"), href: "#contact" },
   ];
 
   return (
@@ -59,44 +56,20 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Center Navigation - Hide some items on medium screens */}
+          {/* Center Navigation */}
           <nav className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 flex-1 mx-8">
             <NavLink to="/" end className={navCls}>
               {t("common.home")}
             </NavLink>
-            {navItems.slice(0, 4).map((item) => (
-              item.href.startsWith("/") ? (
-                <NavLink key={item.name} to={item.href} className={navCls}>
-                  {item.name}
-                </NavLink>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
-                >
-                  {item.name}
-                </a>
-              )
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
+              >
+                {item.name}
+              </a>
             ))}
-            {/* Show remaining items only on XL screens */}
-            <div className="hidden xl:flex items-center gap-4">
-              {navItems.slice(4).map((item) => (
-                item.href.startsWith("/") ? (
-                  <NavLink key={item.name} to={item.href} className={navCls}>
-                    {item.name}
-                  </NavLink>
-                ) : (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
-                  >
-                    {item.name}
-                  </a>
-                )
-              ))}
-            </div>
           </nav>
 
           {/* Right Actions */}
@@ -125,26 +98,22 @@ const Header = () => {
                     {t("common.home")}
                   </NavLink>
                   {navItems.map((item) => (
-                    item.href.startsWith("/") ? (
-                      <NavLink
-                        key={item.name}
-                        to={item.href}
-                        className={navCls}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </NavLink>
-                    ) : (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="text-foreground/80 hover:text-foreground transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    )
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-foreground/80 hover:text-foreground transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </a>
                   ))}
+                  <NavLink
+                    to="/medical-consultation"
+                    className={navCls}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t("common.medicalConsultation")}
+                  </NavLink>
                   <div className="mt-4 space-y-3">
                     <LanguageSwitcher />
                     <CtaButton asChild>

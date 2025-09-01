@@ -68,7 +68,7 @@ const ProcessStep = ({
 }) => (
   <div className="flex items-start space-x-4">
     <div className="flex-shrink-0">
-      <div className="w-12 h-12 rounded-full bg-[#22668D] text-white flex items-center justify-center font-bold">
+      <div className="w-12 h-12 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold">
         {step}
       </div>
     </div>

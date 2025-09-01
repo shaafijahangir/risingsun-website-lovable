@@ -1,6 +1,7 @@
 {
   "common": {
     "home": "Home",
+    "services": "Services",
     "destinations": "Destinations",
     "packages": "Packages",
     "tripBuilder": "Trip Builder",
@@ -8,6 +9,7 @@
     "testimonials": "Testimonials",
     "blogGuides": "Blog/Guides",
     "medicalTravel": "Medical Travel",
+    "medicalConsultation": "Medical Consultation",
     "contact": "Contact",
     "bookCall": "Book a 15-minute call",
     "call": "Call",

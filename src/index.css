@@ -41,6 +41,19 @@
     --brand-primary: 44 72% 56%;
     --brand-navy: 206 71% 15%;
     --brand-offwhite: 35 100% 97%;
+    
+    /* Status and utility colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Thai color palette - HSL values */
+    --thai-gold: 51 76% 53%;
+    --thai-blue: 210 80% 45%;
+    --thai-teal: 174 54% 45%;
+    --thai-orange: 16 100% 66%;
+    --thai-cream: 54 71% 93%;
 
     /* Gray scale tokens */
     --brand-gray-100: 0 0% 96%;

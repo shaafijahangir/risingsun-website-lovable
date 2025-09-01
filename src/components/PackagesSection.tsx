@@ -34,24 +34,24 @@ const TravelPackage = ({
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
-          <div className="text-white">
-            <div className="bg-thai-gold text-white rounded-full py-1 px-3 text-xs inline-block mb-2">
+          <div className="text-primary-foreground">
+            <div className="bg-thai-gold text-primary-foreground rounded-full py-1 px-3 text-xs inline-block mb-2">
               {days}
             </div>
             <h3 className="text-xl font-bold">{title}</h3>
-            <p className="text-white/90 text-sm mt-1">{price}</p>
+            <p className="text-primary-foreground/90 text-sm mt-1">{price}</p>
           </div>
         </div>
       </div>
       <CardContent className="p-6">
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4">{description}</p>
         <div className="mb-6">
           <div className="font-medium mb-2">Package includes:</div>
           <ul className="space-y-2">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start">
                 <Check className="text-thai-gold mr-2 h-5 w-5 mt-0.5 shrink-0" />
-                <span className="text-sm text-gray-600">{feature}</span>
+                <span className="text-sm text-muted-foreground">{feature}</span>
               </li>
             ))}
           </ul>
@@ -123,7 +123,7 @@ const PackagesSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Popular Travel Packages
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Our most sought-after experiences, fully customizable to suit your preferences, 
             timeline, and budget. Each package can be tailored to your needs.
           </p>
@@ -144,7 +144,7 @@ const PackagesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
+          <p className="text-muted-foreground mb-4">
             Don't see what you're looking for? We specialize in creating custom itineraries!
           </p>
           <Button asChild className="bg-thai-blue hover:bg-thai-blue/90 transition-colors">

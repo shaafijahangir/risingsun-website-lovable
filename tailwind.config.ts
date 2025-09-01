@@ -63,16 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Refined color palette for Rising Sun
-				"thai-gold": "#D4AF37",
-				"thai-blue": "#1E78C8", // Bright sky blue
-				"thai-teal": "#33B5AD",
-				"thai-orange": "#FF7F50",
-				"thai-cream": "#F8F4E3",
-				"sunrise-yellow": "#FFD700",
-				"dawn-orange": "#FFA07A",
-				"sky-blue": "#87CEEB",
-				"deep-blue": "#0A4B91",
+				// Brand color palette using HSL tokens
+				"thai-gold": 'hsl(var(--thai-gold))',
+				"thai-blue": 'hsl(var(--thai-blue))', 
+				"thai-teal": 'hsl(var(--thai-teal))',
+				"thai-orange": 'hsl(var(--thai-orange))',
+				"thai-cream": 'hsl(var(--thai-cream))',
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
 			},
 			fontFamily: {
 				heading: ['Inter', 'sans-serif'],

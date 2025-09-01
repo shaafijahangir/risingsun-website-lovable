@@ -34,7 +34,7 @@ const ContactButtons = ({
         onClick={handleWhatsAppClick}
         variant={variant}
         size={size}
-        className="flex items-center gap-2 bg-[#25D366] hover:bg-[#25D366]/90 text-white border-[#25D366]"
+        className="flex items-center gap-2 bg-success hover:bg-success/90 text-success-foreground border-success"
       >
         <MessageCircle size={18} />
         WhatsApp Consultation

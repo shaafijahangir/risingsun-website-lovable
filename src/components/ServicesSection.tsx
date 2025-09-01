@@ -13,7 +13,7 @@ const ServiceCard = ({
   description: string 
 }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md transition-transform hover:-translate-y-1 duration-300 border border-gray-100">
+    <div className="bg-card p-6 rounded-lg shadow-md transition-transform hover:-translate-y-1 duration-300 border border-border">
       <div className="bg-thai-cream p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
         <Icon className="text-thai-gold" size={24} />
       </div>
