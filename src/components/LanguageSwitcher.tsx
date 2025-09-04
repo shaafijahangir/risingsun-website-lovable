@@ -31,9 +31,9 @@ const LanguageSwitcher = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button 
-          variant="outline" 
+          variant="ghost" 
           size="sm"
-          className="flex items-center gap-1.5 h-9 px-2 sm:px-3 min-w-[44px]"
+          className="flex items-center gap-1.5 h-9 px-2 sm:px-3 min-w-[44px] text-white hover:text-white/90 drop-shadow-sm"
           aria-label="Change language"
         >
           <span className="text-base">
