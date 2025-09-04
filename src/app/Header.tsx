@@ -25,7 +25,9 @@ const Header = () => {
   }, []);
   
   const navCls = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "text-primary font-medium" : "text-foreground/80 hover:text-foreground";
+    isActive 
+      ? `text-primary font-medium ${!isScrolled ? 'drop-shadow-sm' : ''}`
+      : `${!isScrolled ? 'text-white drop-shadow-sm hover:text-white/90' : 'text-foreground/80 hover:text-foreground'} transition-colors`;
 
   const navItems = [
     { name: t("common.services"), href: "#services" },
@@ -38,7 +40,7 @@ const Header = () => {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm' 
+        ? 'bg-background/98 backdrop-blur-md border-b border-border/20 shadow-sm' 
         : 'bg-transparent border-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4">
@@ -49,7 +51,7 @@ const Header = () => {
               <img
                 src="/risingsun-logo.png"
                 alt="Rising Sun logo"
-                className="h-8 w-auto"
+                className={`h-8 w-auto transition-all duration-300 ${!isScrolled ? 'drop-shadow-sm' : ''}`}
                 loading="lazy"
               />
               <span className="sr-only">Home</span>
@@ -61,15 +63,15 @@ const Header = () => {
             <NavLink to="/" end className={navCls}>
               {t("common.home")}
             </NavLink>
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
-              >
-                {item.name}
-              </a>
-            ))}
+             {navItems.map((item) => (
+               <a
+                 key={item.name}
+                 href={item.href}
+                 className={`${!isScrolled ? 'text-white drop-shadow-sm hover:text-white/90' : 'text-foreground/80 hover:text-foreground'} transition-colors whitespace-nowrap`}
+               >
+                 {item.name}
+               </a>
+             ))}
           </nav>
 
           {/* Right Actions */}
@@ -82,7 +84,7 @@ const Header = () => {
             {/* Mobile hamburger */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden ml-1">
+                <Button variant="ghost" size="icon" className={`lg:hidden ml-1 ${!isScrolled ? 'text-white hover:text-white/90 hover:bg-white/10' : ''}`}>
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
