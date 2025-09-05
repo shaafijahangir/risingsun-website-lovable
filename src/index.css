@@ -62,6 +62,28 @@
     --brand-gray-700: 0 0% 40%;
     --brand-gray-900: 0 0% 10%;
 
+    /* 3D Effect System */
+    --glass-bg: 255 255 255 / 0.08;
+    --glass-border: 255 255 255 / 0.15;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --glass-blur: blur(12px);
+    
+    /* Shadow System for 3D Effects */
+    --shadow-sm-3d: 0 2px 4px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.12);
+    --shadow-md-3d: 0 4px 12px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.16);
+    --shadow-lg-3d: 0 8px 24px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.20);
+    --shadow-xl-3d: 0 16px 48px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.25);
+    
+    /* Text Shadow System */
+    --text-shadow-sm: 0 1px 2px rgba(0,0,0,0.12);
+    --text-shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.12);
+    --text-shadow-lg: 0 4px 8px rgba(0,0,0,0.20), 0 2px 4px rgba(0,0,0,0.16);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 20px hsl(var(--primary) / 0.3);
+    --glow-secondary: 0 0 20px hsl(var(--secondary) / 0.3);
+    --glow-accent: 0 0 20px hsl(var(--accent) / 0.3);
+
     --radius: 0.5rem;
   }
 }
@@ -114,12 +136,146 @@
   @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
 
+/* Premium 3D Effects */
+.glass-morphism {
+  background: rgba(var(--glass-bg));
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(var(--glass-border));
+  box-shadow: var(--glass-shadow);
+}
+
+.shadow-3d-sm {
+  box-shadow: var(--shadow-sm-3d);
+}
+
+.shadow-3d-md {
+  box-shadow: var(--shadow-md-3d);
+}
+
+.shadow-3d-lg {
+  box-shadow: var(--shadow-lg-3d);
+}
+
+.shadow-3d-xl {
+  box-shadow: var(--shadow-xl-3d);
+}
+
+.text-shadow-sm {
+  text-shadow: var(--text-shadow-sm);
+}
+
+.text-shadow-md {
+  text-shadow: var(--text-shadow-md);
+}
+
+.text-shadow-lg {
+  text-shadow: var(--text-shadow-lg);
+}
+
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-secondary {
+  box-shadow: var(--glow-secondary);
+}
+
+.glow-accent {
+  box-shadow: var(--glow-accent);
+}
+
+/* Enhanced Hover Effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+  transform: translateY(0) scale(1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.hover-glow:hover {
+  @apply shadow-3d-lg glow-primary;
+}
+
+/* Premium Button Effects */
+.btn-3d {
+  @apply relative overflow-hidden shadow-3d-md transition-all duration-300;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.9) 100%);
+}
+
+.btn-3d:hover {
+  @apply shadow-3d-lg;
+  transform: translateY(-1px);
+}
+
+.btn-3d:active {
+  @apply shadow-3d-sm;
+  transform: translateY(0);
+}
+
+.btn-3d::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.btn-3d:hover::before {
+  @apply opacity-100;
+}
+
 /* Smooth animations */
 .fade-in {
   @apply opacity-0 animate-[fadeIn_0.5s_ease-out_forwards];
 }
 
+.stagger-fade {
+  @apply opacity-0 animate-[staggerFade_0.6s_ease-out_forwards];
+}
+
+/* Navigation Effects */
+.nav-link-3d {
+  @apply relative transition-all duration-300 text-shadow-sm;
+}
+
+.nav-link-3d:hover {
+  @apply text-shadow-md;
+  transform: translateY(-1px);
+}
+
+.nav-link-3d.active {
+  @apply text-shadow-lg;
+}
+
+.nav-link-3d::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300;
+}
+
+.nav-link-3d:hover::after {
+  @apply w-full;
+}
+
+.nav-link-3d.active::after {
+  @apply w-full shadow-3d-sm;
+}
+
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes staggerFade {
+  0% { opacity: 0; transform: translateY(15px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: var(--shadow-md-3d); }
+  50% { box-shadow: var(--shadow-lg-3d), var(--glow-primary); }
 }
