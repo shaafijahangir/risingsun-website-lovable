@@ -16,31 +16,31 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primary brand color - Light Peach */
-    --primary: 25 90% 80%;
-    --primary-foreground: 15 23 42;
+    /* Primary brand color (E0B63F) */
+    --primary: 44 72% 56%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Updated secondary color to light blue */
-    --secondary: 200 85% 75%;
-    --secondary-foreground: 15 23 42;
+    /* Updated secondary color to Thai blue */
+    --secondary: 210 80% 45%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 50 95% 85%;
-    --accent-foreground: 15 23 42;
+    --accent: 174 54% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 25 90% 80%;
+    --ring: 44 72% 56%;
 
-    /* Brand tokens - Light & friendly palette */
-    --brand-primary: 25 90% 80%;
-    --brand-navy: 200 85% 75%;
-    --brand-offwhite: 45 80% 92%;
+    /* Brand tokens */
+    --brand-primary: 44 72% 56%;
+    --brand-navy: 206 71% 15%;
+    --brand-offwhite: 35 100% 97%;
     
     /* Status and utility colors */
     --success: 142 76% 36%;
@@ -48,12 +48,12 @@
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
     
-    /* Light & friendly color palette - HSL values */
-    --thai-gold: 25 90% 80%;      /* Light Peach */
-    --thai-blue: 200 85% 75%;     /* Light Blue */
-    --thai-teal: 195 90% 65%;     /* Secondary Light Blue */
-    --thai-orange: 30 85% 75%;    /* Secondary Peach */
-    --thai-cream: 45 80% 92%;     /* Light Cream */
+    /* Thai color palette - HSL values */
+    --thai-gold: 51 76% 53%;
+    --thai-blue: 210 80% 45%;
+    --thai-teal: 174 54% 45%;
+    --thai-orange: 16 100% 66%;
+    --thai-cream: 54 71% 93%;
 
     /* Gray scale tokens */
     --brand-gray-100: 0 0% 96%;
@@ -122,13 +122,13 @@
   @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
 }
 
-/* Custom gradient effects - Light palette */
+/* Custom gradient effects */
 .bg-sunrise {
-  @apply bg-gradient-to-r from-light-peach to-light-peach-secondary;
+  @apply bg-gradient-to-r from-yellow-500 to-thai-gold;
 }
 
 .bg-sky {
-  @apply bg-gradient-to-r from-light-blue to-light-blue-secondary;
+  @apply bg-gradient-to-r from-thai-blue to-blue-600;
 }
 
 /* Card hover effects */

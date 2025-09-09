@@ -50,7 +50,7 @@ const Header = () => {
               <img
                 src="/risingsun-logo.png"
                 alt="Rising Sun logo"
-                className="h-8 lg:h-10 w-auto"
+                className="h-8 lg:h-10 w-auto transition-all duration-300 shadow-3d-sm group-hover:shadow-3d-md animate-float"
                 loading="lazy"
               />
               <span className="sr-only">Home</span>

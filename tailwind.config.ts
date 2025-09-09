@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Light & friendly brand palette using HSL tokens
-				"light-peach": 'hsl(var(--thai-gold))',
-				"light-blue": 'hsl(var(--thai-blue))', 
-				"light-blue-secondary": 'hsl(var(--thai-teal))',
-				"light-peach-secondary": 'hsl(var(--thai-orange))',
-				"light-cream": 'hsl(var(--thai-cream))',
+				// Brand color palette using HSL tokens
+				"thai-gold": 'hsl(var(--thai-gold))',
+				"thai-blue": 'hsl(var(--thai-blue))', 
+				"thai-teal": 'hsl(var(--thai-teal))',
+				"thai-orange": 'hsl(var(--thai-orange))',
+				"thai-cream": 'hsl(var(--thai-cream))',
 				success: {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
