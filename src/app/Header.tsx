@@ -46,11 +46,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 h-18 lg:h-20 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
-            <Link to="/" className="flex items-center gap-2 hover-lift group">
+            <Link to="/" className="flex items-center gap-2">
               <img
                 src="/risingsun-logo.png"
                 alt="Rising Sun logo"
-                className="h-8 lg:h-10 w-auto transition-all duration-300 shadow-3d-sm group-hover:shadow-3d-md animate-float"
+                className="h-8 lg:h-10 w-auto"
                 loading="lazy"
               />
               <span className="sr-only">Home</span>
